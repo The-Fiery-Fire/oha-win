@@ -19,31 +19,31 @@ jobs:
             artifact_name: oha
             release_name: oha-linux-amd64
             target: x86_64-unknown-linux-musl
-            additional_args: "--features vsock"
+            additional_args: "--features 'vsock http3'"
             use_cross: false
           - os: windows-latest
             artifact_name: oha.exe
             release_name: oha-windows-amd64.exe
             target: x86_64-pc-windows-msvc
-            additional_args: ""
+            additional_args: "--features http3"
             use_cross: false
           - os: macos-latest
             artifact_name: oha
             release_name: oha-macos-amd64
             target: x86_64-apple-darwin
-            additional_args: ""
+            additional_args: "--features http3"
             use_cross: false
           - os: ubuntu-latest
             artifact_name: oha
             release_name: oha-linux-arm64
             target: aarch64-unknown-linux-musl
-            additional_args: "--features vsock"
+            additional_args: "--features 'vsock http3'"
             use_cross: true
           - os: macos-14
             artifact_name: oha
             release_name: oha-macos-arm64
             target: aarch64-apple-darwin
-            additional_args: ""
+            additional_args: "--features http3"
             use_cross: false
     env:
       BUILD_CMD: cargo
